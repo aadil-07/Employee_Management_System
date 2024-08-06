@@ -33,7 +33,7 @@ const verifyUser = (req, res, next) => {
 app.get('/verify',verifyUser, (req, res)=> {
     return res.json({Status: true, role: req.role, id: req.id})
 } )
-
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log("Server is running")
-})
+});
